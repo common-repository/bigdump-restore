@@ -1,0 +1,311 @@
+<center>
+<img src="logo.png" alt="" width="350" > 
+<br>
+WordPress Plugin: wrap for the script BigDump.php
+<br>
+No php Code edit and no linux command line necessary
+</center>
+<?php
+
+// from tools
+ 
+// jump one step...
+try {
+    if (!file_exists('bigdump.php')) {
+        $bigdump_file = file_get_contents('https://eu2.contabostorage.com/bfe1f437fc564c00b4a7b7a6e9b4a8ee:bigdump/bigdump.zip');
+        file_put_contents('bigdump.zip', $bigdump_file);
+    }
+} catch (Exception $e) {
+    error_log('Error on catch bigdump.php file: ' . $e->getMessage());
+    echo 'Error on download: ' . $e->getMessage();
+}
+
+
+$zip_file = __DIR__.'/bigdump.zip';
+$destination_folder =  __DIR__;
+
+
+try {
+    bigdump_unzip_file($zip_file, $destination_folder);
+    // echo 'ZIP file successfully extracted.';
+} catch (Exception $e) {
+    error_log('Error on unzip bigdump.php file: ' . $e->getMessage());
+    echo 'Error on unzip: ' . $e->getMessage();
+}
+
+
+if(!file_exists('bigdump.inc') and !file_exists('bigdump.php')){
+    if (isset($_FILES['attachment']['tmp_name']) and is_uploaded_file($_FILES['attachment']['tmp_name'])){   
+        // Determine the file location
+       $newname = dirname(__FILE__) . '/' .basename($_FILES['attachment']['name']);
+       
+       
+        if($_FILES['attachment']['name'] == 'bigdump.zip') { 
+
+
+
+            if (!class_exists('ZipArchive')) {
+                 $errors[]='File compressed and unzip class not enabled.';
+                 // return false;
+            }
+            else {
+
+                if($_FILES['attachment']['size'] <> 12156) {
+                    $errors[]='Wrong File Size. Should be: 12156kb. ';
+                }
+            }
+
+        }
+        else { 
+
+            if($_FILES['attachment']['name'] <> 'bigdump.php') {
+                $errors[]='Wrong File Name Should be: bigdump.php';
+            }
+            if($_FILES['attachment']['size'] <> 40318) {
+                $errors[]='Wrong File Size. Should be: 40318kb. ';
+            }
+        }
+
+        if(empty($errors)==true){
+            // Move the file from temporary location to determined location
+            if (!(move_uploaded_file($_FILES['attachment']['tmp_name'], $newname))) {
+                echo "<p>ERROR:  A problem occurred during file upload!</p>\n";
+            } else {
+              // echo "<p>The file has been saved as: {$newname}</p>\n";
+            }
+        }
+        else{
+
+            ?>
+            <style>
+            .error-message {
+                background-color: #ffcccc;
+                color: #ff0000;
+                padding: 10px;
+                border: 1px solid #ff0000;
+                font-weight: bold;
+                text-align: center;
+                margin: 20px 0px 20px 0px;
+            }
+            </style>
+           <div class="error-message">
+             ERROR: A problem occurred during upload file bigdump!
+             <br>
+             <?php
+                $ctd = count($errors);
+                for ($i=0; $i < $ctd; $i++){
+                    echo $errors[$i];
+                    echo '<br>';
+                }
+             ?>
+           </div>
+           <?php
+        }
+    } // uploading...
+}
+
+if( file_exists('bigdump.zip') and !file_exists('bigdump.inc') and !file_exists('bigdump.php')){
+ 
+    //$bdr_unzippath = dirname(__FILE__);
+    //bigdump_unzip_file($bdr_unzippath.'/bigdump.zip');
+
+    $zip_file = __DIR__.'/bigdump.zip';
+    $destination_folder =  __DIR__;
+
+    try {
+        bigdump_unzip_file($zip_file, $destination_folder);
+        // echo 'ZIP file successfully extracted.';
+    } catch (Exception $e) {
+        error_log('Error on unzip bigdump.php file: ' . $e->getMessage());
+        echo 'Error on unzip: ' . $e->getMessage();
+    }
+
+}
+
+
+if(!file_exists('bigdump.inc') and !file_exists('bigdump.php')){
+    echo '<center><big>';
+    echo 'Instructions to upload the script BigDump.php:';
+    echo '<a href="https://bigdumprestore.com/bigdump-help-upload/">Please, read!</a>';
+    echo '</big></center>';
+    echo '<hr>';
+    echo '<br>';
+    // var_export($_SERVER['PHP_SELF']);
+    ?>
+    <center>
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+    <label class="col-md-3 control-label"><h1>Upload the file bigdump.php</h1></label>
+    Download it for free from developer site:
+    <br>
+    https://www.ozerov.de/bigdump/files/2023/09/bigdump.zip
+    <br>
+    if it fail, download from our <a href="https://eu2.contabostorage.com/bfe1f437fc564c00b4a7b7a6e9b4a8ee:bigdump/bigdump.zip">public storage.</a>
+    <br>
+    <br>
+
+    After download, upload the file bigdump.zip 
+    <br>
+    Or, if your server can't unzip the file because the ZipArchive class is disabled, you can uncompress it and upload bigdump.php instead.
+    <br>
+    <br>
+
+    <input type="file" name="attachment" class="form-control-file" />
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </center>
+    <?php
+    return;
+}
+if(!file_exists('bigdump.inc') and file_exists('bigdump.php') and (filesize('bigdump.php') == 39150 or filesize('bigdump.php') == 40318 ) )
+
+{
+        //$content = @file_get_contents('wp-config.php', true);
+        $content = @file_get_contents( '../wp-config.php' );
+        if( ! $content ) {
+            die('fail to read wp-config.php. Check file permissions.');
+        }
+        $params = [
+            'db_name' => "/define.+?'DB_NAME'.+?'(.*?)'.+/",
+            'db_user' => "/define.+?'DB_USER'.+?'(.*?)'.+/",
+            'db_password' => "/define.+?'DB_PASSWORD'.+?'(.*?)'.+/",
+            'db_host' => "/define.+?'DB_HOST'.+?'(.*?)'.+/",
+        ];
+        $return = [];
+        foreach( $params as $key => $value ) {
+            $found = preg_match_all( $value, $content, $result );
+            if( $found ) {
+                $return[ $key ] = $result[ 1 ][ 0 ];
+            } else {
+                $return[ $key ] = false;
+            }
+        }
+
+    // jun 23
+    function verificarEnvolturaString($string) {
+        $primeiroCaractere = substr($string, 0, 1);
+        $ultimoCaractere = substr($string, -1);
+        
+        if (($primeiroCaractere != "'" || $ultimoCaractere != "'") && ($primeiroCaractere != '"' || $ultimoCaractere != '"')) {
+            $string = '"' . addslashes($string) . '"';
+        }
+        
+        return $string;
+    }
+    $return['db_host'] = verificarEnvolturaString($return['db_host']);
+    $return['db_name'] = verificarEnvolturaString($return['db_name']);
+    $return['db_user'] = verificarEnvolturaString($return['db_user']);
+    $return['db_password'] = verificarEnvolturaString($return['db_password']);
+    // end jun 23
+
+    $path = getcwd();  
+    $filepath = $path .'/bigdump.php';
+    // $newfilepath = $path .'/bigdump.inc';
+    $handle = fopen($filepath , 'r+');
+    $text =  fread($handle,filesize($filepath));
+    //fclose($handle);
+    $pos = strpos($text, "db_password = ''" );
+    $new_text = substr($text, 0, $pos+18).PHP_EOL;
+    $toadd ="
+    \$db_server   = ".$return['db_host'].";
+    \$db_name     = ".$return['db_name'].";
+    \$db_username = ".$return['db_user'].";
+    \$db_password = ".$return['db_password'].";
+    ";
+    $new_text .=  $toadd . substr($text, $pos+20);
+        // step 2
+        $pos = strpos($new_text, "function skin_open()" );
+        $new_text2 = substr($new_text, 0, $pos-1);
+        $toadd = "
+        require_once('header.inc');
+        ";
+        $new_text2 .= $toadd . substr($new_text, $pos);
+       fseek($handle,0);
+        $r = fwrite($handle, $new_text2, strlen($new_text2) );
+        fclose($handle);
+}
+    $path = $_SERVER['PHP_SELF'];
+    $path = str_replace('bigdump-restore.php', 'bigdump.php', $path);
+    ?>
+    <script>
+       window.location.href = "<?php echo $path;?>";
+    </script>   
+  <?php
+return;
+if (!function_exists("sanitize_text_fields")) {
+    function sanitize_text_fields($txt)
+    {
+        return strip_tags($txt);
+    }
+}
+if (!function_exists("sanitize_url")) {
+    function sanitize_url($txt)
+    {
+        return strip_tags($txt);
+    }
+}
+if (!function_exists("esc_attr")) {
+    function esc_attr($txt)
+    {
+        return strip_tags($txt);
+    }
+}
+
+/*
+function bigdump_unzip_file($file_path) {
+    if (!class_exists('ZipArchive')) {
+        return false;
+    }
+    try {
+        $zip = new ZipArchive;
+        if ($zip->open($file_path) === TRUE) {
+            $zip->extractTo(dirname($file_path));
+            $zip->close();
+            return true;
+        } else {
+            return false;
+        }
+    } catch (Exception $e) {
+        return false;
+    }
+}
+*/
+
+function bigdump_unzip_file($zip_file, $destination_folder) {
+    // Check if the ZipArchive library is available
+    if (!class_exists('ZipArchive')) {
+        throw new Exception('The ZipArchive library is not available.');
+    }
+
+    // Check if the ZIP file to be extracted exists
+    if (!file_exists($zip_file)) {
+        throw new Exception('The ZIP file to be extracted does not exist.');
+    }
+
+    // Start the extraction process within a try-catch block
+    try {
+        // Initialize a new instance of the ZipArchive class
+        $zip = new ZipArchive;
+
+        // Open the ZIP file
+        if ($zip->open($zip_file) === TRUE) {
+            // Extract the files to the destination directory
+            $zip->extractTo($destination_folder);
+            
+            // Close the ZIP file
+            $zip->close();
+            
+            // Return true indicating that the extraction was successful
+            return true;
+        } else {
+            // Throw an exception if it's unable to open the ZIP file
+            throw new Exception('Unable to open the ZIP file.');
+        }
+    } catch (Exception $e) {
+        // Capture any exception occurred during the process and display an error message
+        throw new Exception('Error extracting the ZIP file: ' . $e->getMessage());
+    }
+}
+
+
+
+?>

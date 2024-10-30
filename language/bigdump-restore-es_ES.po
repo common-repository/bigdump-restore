@@ -1,0 +1,295 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bigdump-restore\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-14 09:44+0000\n"
+"PO-Revision-Date: 2024-02-14 09:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: Spanish (Spain)\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: bigdump_restore.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Loco-Version: 2.6.6; wp-6.4.3\n"
+"X-Poedit-SearchPath-0: language\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: bigdump_restore.php:189
+msgid ""
+"For security, within the BigDump Restore Dashboard plugin, you have the "
+"option to toggle this plugin on or off. After restoring the database, turn "
+"it off."
+msgstr ""
+"Por seguridad, dentro del complemento BigDump Restore Dashboard, tiene la "
+"opción de activar o desactivar este complemento. Después de restaurar la "
+"base de datos, apáguela."
+
+#: bigdump_restore.php:297
+msgid "Open Bigdump Restore Plugin Here!"
+msgstr "¡Abra el complemento de restauración Bigdump aquí!"
+
+#: bigdump_restore.php:298
+msgid "Just Click Over Tools => Bigdump Restore."
+msgstr "Simplemente haga clic en Herramientas => Restaurar Bigdump."
+
+#: dashboard/dashboard.php:15
+msgid "Dashboard"
+msgstr "Panel"
+
+#: dashboard/dashboard.php:18
+msgid ""
+"This Plugin can help you to restore very large database backups, building a "
+"shell (wrapping) for the highly reputed free php script \"bigdump\"."
+msgstr ""
+"Este complemento puede ayudarlo a restaurar copias de seguridad de bases de "
+"datos muy grandes, creando un shell (envoltorio) para el script php gratuito "
+"de gran reputación \"bigdump\"."
+
+#: dashboard/dashboard.php:20
+msgid ""
+"Then, you can do the whole restore job in friendly GUI, without make php "
+"code changes or linux commands."
+msgstr ""
+"Luego, puede realizar todo el trabajo de restauración en una GUI amigable, "
+"sin realizar cambios en el código PHP ni comandos de Linux."
+
+#: dashboard/dashboard.php:24
+msgid ""
+"By security, after finishing the restore job, turn off this plugin (navigate "
+"to the Settings Tab) and delete the SQL files from the folder below."
+msgstr ""
+"Por seguridad, después de finalizar el trabajo de restauración, desactive "
+"este complemento (navegue a la pestaña Configuración) y elimine los archivos "
+"SQL de la carpeta a continuación."
+
+#: dashboard/dashboard.php:32
+msgid ""
+"BigDump Restore is currently off. Navigate to the Settings tab and switch it "
+"on (to see the folder)."
+msgstr ""
+"BigDump Restore está actualmente desactivado. Navegue a la pestaña "
+"Configuración y actívela (para ver la carpeta)."
+
+#: dashboard/dashboard.php:37
+msgid "To Start to Restore Database job, go to this url:"
+msgstr ""
+"Para comenzar a restaurar el trabajo de base de datos, vaya a esta URL:"
+
+#: dashboard/dashboard.php:50
+msgid "Visit the plugin site for more details and demo video."
+msgstr ""
+"Visite el sitio del complemento para obtener más detalles y un video de "
+"demostración."
+
+#: dashboard/dashboard_more.php:13
+msgid "Install the Database Backup Free Plugin"
+msgstr ""
+"Instale el complemento gratuito de copia de seguridad de la base de datos"
+
+#: dashboard/dashboard_more.php:16
+msgid ""
+"Free Plugin Automatic or Manual Database Backup with just one click. Zip "
+"file option available.  Compatible and integrated with Bigdump Restore "
+"Plugin."
+msgstr ""
+"Complemento gratuito Copia de seguridad de base de datos automática o manual "
+"con solo un clic. Opción de archivo zip disponible. Compatible e integrado "
+"con el complemento Bigdump Restore."
+
+#: dashboard/dashboard_settings.php:56
+msgid "Manage BigDump Restore Plugin"
+msgstr "Administrar el complemento de restauración BigDump"
+
+#: dashboard/dashboard_settings.php:57
+msgid ""
+"Toggle this plugin on or off. Turn it on to restore your database. After "
+"finishing the restoration, for security, switch it off."
+msgstr ""
+"Activa o desactiva este complemento. Actívelo para restaurar su base de "
+"datos. Después de finalizar la restauración, por seguridad, apáguelo."
+
+#: dashboard/dashboard_settings.php:65
+msgid "On"
+msgstr "Activado"
+
+#: dashboard/dashboard_settings.php:68
+msgid "Off"
+msgstr "Desactivado"
+
+#: dashboard/dashboard_settings.php:73
+msgid ""
+"Automatically update this plugin via WordPress when a new version is "
+"available?"
+msgstr ""
+"¿Actualizar automáticamente este complemento a través de WordPress cuando "
+"haya una nueva versión disponible?"
+
+#: dashboard/dashboard_settings.php:76
+msgid "Yes"
+msgstr "Sí"
+
+#: dashboard/dashboard_settings.php:79
+msgid "No"
+msgstr "No"
+
+#: dashboard/dashboard_settings.php:85
+msgid "Update"
+msgstr "Actualizar"
+
+#: dashboard/dashboard_settings.php:107
+msgid "Settings Updated!"
+msgstr "¡Ajustes actualizan!"
+
+#: includes/checkup/bill_class_diagnose.php:239
+#: includes/checkup/bill_class_diagnose.php:260
+msgid "Our plugin"
+msgstr "Nuestro complemento"
+
+#: includes/checkup/bill_class_diagnose.php:241
+msgid ""
+"cannot function properly because your WordPress Memory Limit is too low. "
+"Your site will experience serious issues, even if you deactivate our plugin."
+msgstr ""
+"no puede funcionar correctamente porque su límite de memoria de WordPress es "
+"demasiado bajo. Su sitio experimentará problemas graves, incluso si "
+"desactiva nuestro complemento."
+
+#: includes/checkup/bill_class_diagnose.php:247
+#: includes/checkup/bill_class_diagnose.php:268
+msgid "Learn more"
+msgstr "Aprende más"
+
+#: includes/checkup/bill_class_diagnose.php:259
+msgid "Your site has errors."
+msgstr "Su sitio tiene errores."
+
+#: includes/checkup/bill_class_diagnose.php:262
+msgid ""
+"can't function as intended. Errors, including JavaScript errors, may lead to "
+"visual problems or disrupt functionality, from minor glitches to critical "
+"site failures. Promptly address these issues before continuing."
+msgstr ""
+"no puede funcionar según lo previsto. Los errores, incluidos los errores de "
+"JavaScript, pueden provocar problemas visuales o alterar la funcionalidad, "
+"desde fallas menores hasta fallas críticas del sitio. Aborde estos problemas "
+"de inmediato antes de continuar."
+
+#: includes/checkup/bill_class_diagnose.php:288
+msgctxt "Site Health"
+msgid "Critical Issues"
+msgstr "Cuestiones críticas"
+
+#: includes/checkup/bill_class_diagnose.php:323
+msgid ""
+"Displaying the latest recurring errors from your error log file and "
+"eventually alert about low WordPress memory limit is a courtesy of plugin"
+msgstr ""
+"Mostrar los últimos errores recurrentes de su archivo de registro de errores "
+"y, eventualmente, alertar sobre el límite bajo de memoria de WordPress es "
+"cortesía del complemento"
+
+#: includes/checkup/bill_class_diagnose.php:325
+msgid ""
+"Disabling our plugin does not stop the errors from occurring; \n"
+"                it simply means you will no longer be notified here that "
+"they are happening, but they can still harm your site."
+msgstr ""
+"Deshabilitar nuestro complemento no evita que se produzcan errores;\n"
+"                simplemente significa que ya no se le notificará aquí que "
+"están sucediendo, pero aún pueden dañar su sitio."
+
+#: includes/checkup/bill_class_diagnose.php:333
+msgid "Potential Problems"
+msgstr "Problemas potenciales"
+
+#: includes/checkup/bill_class_diagnose.php:341
+msgid "Low WordPress Memory Limit"
+msgstr "Límite bajo de memoria de WordPress"
+
+#: includes/checkup/bill_class_diagnose.php:354
+msgid "Your usage now"
+msgstr "Tu uso ahora"
+
+#: includes/checkup/bill_class_diagnose.php:362
+msgid "Total Php Server Memory"
+msgstr "Memoria total del servidor PHP"
+
+#: includes/checkup/bill_class_diagnose.php:371
+msgid ""
+"Your WordPress Memory Limit is too low, which can lead to critical issues on "
+"your site due to insufficient resources. Promptly address this issue before "
+"continuing."
+msgstr ""
+"Su límite de memoria de WordPress es demasiado bajo, lo que puede provocar "
+"problemas críticos en su sitio debido a recursos insuficientes. Aborde este "
+"problema de inmediato antes de continuar."
+
+#: includes/checkup/bill_class_diagnose.php:377
+#: includes/checkup/bill_class_diagnose.php:397
+msgid "Learn More"
+msgstr "Aprende más"
+
+#: includes/checkup/bill_class_diagnose.php:388
+msgid "Site Errors"
+msgstr "Errores del sitio"
+
+#: includes/checkup/bill_class_diagnose.php:393
+msgid ""
+"Your site has experienced errors for the past 2 days. These errors, "
+"including JavaScript issues, can result in visual problems or disrupt "
+"functionality, ranging from minor glitches to critical site failures. "
+"JavaScript errors can terminate JavaScript execution, leaving all subsequent "
+"commands inoperable."
+msgstr ""
+"Su sitio ha experimentado errores durante los últimos 2 días. Estos errores, "
+"incluidos los problemas de JavaScript, pueden provocar problemas visuales o "
+"alterar la funcionalidad, desde fallos menores hasta fallos críticos del "
+"sitio. Los errores de JavaScript pueden finalizar la ejecución de "
+"JavaScript, dejando todos los comandos posteriores inoperables."
+
+#: includes/checkup/bill_class_diagnose.php:463
+msgid "This is a partial list of the errors found."
+msgstr "Esta es una lista parcial de los errores encontrados."
+
+#: includes/checkup/bill_class_diagnose.php:967
+msgid ""
+"These are critical issues that can have a significant impact on your site's "
+"performance. They can cause many plugins and functionalities to malfunction "
+"and, in some cases, render your site completely inoperative, depending on "
+"their severity. Address them promptly."
+msgstr ""
+"Estos son problemas críticos que pueden tener un impacto significativo en el "
+"rendimiento de su sitio. Pueden provocar que muchos complementos y "
+"funcionalidades no funcionen correctamente y, en algunos casos, hacer que su "
+"sitio quede completamente inoperativo, según su gravedad. Atiéndalos con "
+"prontitud."
+
+#. Plugin Name of the plugin/theme
+msgid "bigdump-restore"
+msgstr "bigdump-restore"
+
+#. Description of the plugin/theme
+msgid "Restore very large Bigdump Restores safetly and friendly."
+msgstr ""
+"Restaure restauraciones Bigdump muy grandes de forma segura y amigable."
+
+#. Author of the plugin/theme
+msgid "Bill Minozzi"
+msgstr "Bill Minozzi"
+
+#. Author URI of the plugin/theme
+msgid "http://billminozzi.com"
+msgstr "http://billminozzi.com"
+
+#~ msgid "Plugin Site"
+#~ msgstr "Sitio de complemento"
